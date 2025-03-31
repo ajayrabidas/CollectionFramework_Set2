@@ -13,12 +13,12 @@ public class CharCountInString {
         CharCountInString t = new CharCountInString();
 
         // scenario 1 method 1
-        t.method1("aababbccde");
+        t.getCharCount("aababbccde");
 
     }
 
     // solution1:
-    public void method1(String s) {
+    public void getCharCount(String s) {
 
         Map<Character, Integer> m = new LinkedHashMap<Character, Integer>();
 
@@ -32,10 +32,4 @@ public class CharCountInString {
             System.out.print(me.getKey() + "" + me.getValue());
         }
     }
-
-    // solution2:
-    public void method2() {
-
-    }
-
 }

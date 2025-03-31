@@ -16,12 +16,12 @@ public class DistanceBetweenTwoWords {
         String w1 = "quick";
         String w2 = "frog";
 
-        System.out.println("Minimum Distance: " + t.method1(str, w1, w2));
+        System.out.println("Minimum Distance: " + t.checkDistance(str, w1, w2));
 
     }
 
     // solution1:
-    public int method1(String str, String w1, String w2) {
+    public int checkDistance(String str, String w1, String w2) {
         if (w1.equals(w2))
             return 0;
 
@@ -44,15 +44,9 @@ public class DistanceBetweenTwoWords {
                     minDistance = tempDistance;
                 }
             }
-
         }
-
         return minDistance;
     }
 
     // solution2:
-    public void method2() {
-
-    }
-
 }

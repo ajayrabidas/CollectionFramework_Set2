@@ -12,15 +12,15 @@ public class SubArrayWithHighestTotal {
 
         // scenario 1 method 1
         int[] arr = {1, 8, 5, 3, 12, 10, 3, 2, 7};
-        System.out.println("Maximum sum with sub-array size 5: " + t.method1(arr, 5));
+        System.out.println("Maximum sum with sub-array size 5: " + t.highestTotalWithBruteForce(arr, 5));
 
         // scenario 1 method 2
-        System.out.println("Maximum sum with sub-array size 5: " + t.method2(arr, 5));
+        System.out.println("Maximum sum with sub-array size 5: " + t.highestTotalUsingSlidingWindow(arr, 5));
 
     }
 
     // solution1:
-    public int method1(int[] arr, int subArrSize) {
+    public int highestTotalWithBruteForce(int[] arr, int subArrSize) {
 
         int maxSum = 0;
         for (int i = 0; i + subArrSize <= arr.length; i++) {
@@ -36,7 +36,7 @@ public class SubArrayWithHighestTotal {
     }
 
     // solution2:
-    public int method2(int[] arr, int subArrSize) {
+    public int highestTotalUsingSlidingWindow(int[] arr, int subArrSize) {
 
         int maxSum = 0;
         // sum of first windows of size subArraySize
@@ -47,7 +47,7 @@ public class SubArrayWithHighestTotal {
         // other remaining windows
         int otherSum = maxSum;
         for (int i = subArrSize; i < arr.length; i++) {
-            otherSum = otherSum + arr[i] - arr[i-subArrSize];
+            otherSum = otherSum + arr[i] - arr[i - subArrSize];
             maxSum = Math.max(otherSum, maxSum);
         }
 

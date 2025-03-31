@@ -12,27 +12,12 @@ public class RemoveDuplicatesSortedArray {
 
         // scenario 1 method 1
         int[] arr = {1, 2, 3, 4, 4, 5, 6, 6};
-        System.out.print("\nNew size: " + t.method1(arr));
-
-        // scenario 2 method 1
-//        t.method1();
-
-        // scenario 3 method 1
-//        t.method1();
-
-        // scenario 4 method 2
-//        t.method2();
-
-        // scenario 5 method 2
-//        t.method2();
-
-        // scenario 6 method 2
-//        t.method2();
+        System.out.print("\nNew size: " + t.removeDuplicateFromArray(arr));
 
     }
 
     // solution1:
-    public int method1(int[] arr) {
+    public int removeDuplicateFromArray(int[] arr) {
         int newSize = 0;
 
         Set<Integer> se = new HashSet<>();

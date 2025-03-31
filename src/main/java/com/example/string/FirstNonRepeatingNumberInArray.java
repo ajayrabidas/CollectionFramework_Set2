@@ -14,14 +14,12 @@ public class FirstNonRepeatingNumberInArray {
 
         // scenario 1 method 1
         int[] arr = {2, 4, 3, 5, 3, 7, 8, 9, 1, 2, 4};
-        System.out.println("First non-repeating: " + t.method1(arr));
+        System.out.println("First non-repeating: " + t.findFirstNonRepeatingNumber(arr));
 
-        // scenario 2 method 1
-//        t.method1();
     }
 
     // solution1: using LinkedHashMap
-    public int method1(int[] arr) {
+    public int findFirstNonRepeatingNumber(int[] arr) {
 
         Map<Integer, Integer> m = new LinkedHashMap<Integer, Integer>();
         for (int i : arr) {

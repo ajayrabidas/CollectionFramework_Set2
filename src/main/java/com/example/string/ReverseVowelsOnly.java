@@ -8,13 +8,13 @@ public class ReverseVowelsOnly {
         ReverseVowelsOnly t = new ReverseVowelsOnly();
 
         // scenario 1 method 1
-        System.out.println("Result: " + t.method1("India"));
+        System.out.println("Result: " + t.reverseVowelsOnly("India"));
 
         // scenario 2 method 1
-        System.out.println("Result: " + t.method1(""));
+        System.out.println("Result: " + t.reverseVowelsOnly(""));
 
         // scenario 3 method 1
-        System.out.println("Result: " + t.method1(null));
+        System.out.println("Result: " + t.reverseVowelsOnly(null));
 
     }
 
@@ -28,7 +28,7 @@ public class ReverseVowelsOnly {
         return false;
     }
 
-    public String method1(String s) {
+    public String reverseVowelsOnly(String s) {
 
         if (s == null) {
             System.out.println("Null Encountered");

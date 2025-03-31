@@ -11,11 +11,11 @@ public class LongestSubStringWithoutRepeat {
         LongestSubStringWithoutRepeat t = new LongestSubStringWithoutRepeat();
 
         // scenario 1 method 1
-        System.out.println("Max Lenght of sub-string without repetetion: " + t.method1("aabcdefghabce"));
+        System.out.println("Max Lenght of sub-string without repetetion: " + t.findLongestSubstring("aabcdefghabce"));
     }
 
     // solution1:
-    public int method1(String str) {
+    public int findLongestSubstring(String str) {
 
         int maxLen = Integer.MIN_VALUE;
         Set<Character> se = new HashSet<Character>();
