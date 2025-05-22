@@ -2,62 +2,118 @@ package com.example.string;
 
 public class ReverseVowelsOnly {
 
-// Question: Q1. Reverse all the vowels in a given string maintaining the initial order of consonants.
-
     public static void main(String[] args) {
-        ReverseVowelsOnly t = new ReverseVowelsOnly();
+        // reverseVowels
+        System.out.println(reverseVowels("Goldman"));
+        System.out.println(reverseVowels("hello"));
+        System.out.println(reverseVowels(""));
 
-        // scenario 1 method 1
-        System.out.println("Result: " + t.reverseVowelsOnly("India"));
+        // reverseVowels
+        System.out.println(reverseVowelsOnly("Goldman"));
+        System.out.println(reverseVowelsOnly("hello"));
+        System.out.println(reverseVowels(""));
 
-        // scenario 2 method 1
-        System.out.println("Result: " + t.reverseVowelsOnly(""));
-
-        // scenario 3 method 1
-        System.out.println("Result: " + t.reverseVowelsOnly(null));
+        // reverseConsonantsOnly
+        System.out.println(reverseConsonantsOnly("Goldman"));
+        System.out.println(reverseConsonantsOnly("hello"));
+        System.out.println(reverseVowels(""));
 
     }
 
-    // solution1:
-    public boolean isVowel(char c) {
-        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O'
-                || c == 'U') {
-            return true;
-        }
+    // solution 1: brute-fore approach
+    // Store the vowels in a StringBuilder, rearrange vowels only in a StringBuilder(str)
+    // O(n) Time and O(n) Space
+    public static String reverseVowels(String str) {
 
-        return false;
-    }
+        if (str != null && !str.isEmpty()) {
+            // store the vowels in a StringBuilder
+            StringBuilder vowelsOnly = new StringBuilder();
 
-    public String reverseVowelsOnly(String s) {
-
-        if (s == null) {
-            System.out.println("Null Encountered");
-            return "";
-        }
-
-        if (!s.isEmpty()) {
-            System.out.println("Original: " + s);
-
-            char[] ch = s.toCharArray();
-            StringBuilder sbl = new StringBuilder();
-
+            char[] ch = str.toCharArray();
             for (char c : ch) {
                 if (isVowel(c)) {
-                    sbl.append(c);
+                    vowelsOnly.append(c);
                 }
             }
 
-            StringBuilder sbl2 = new StringBuilder(s);
-            int j = sbl.length() - 1;
-            for (int i = 0; i < s.length(); i++) {
-                if (isVowel(s.charAt(i))) {
-                    sbl2.setCharAt(i, sbl.charAt(j));
+            //store the given string in a new StringBuilder
+            StringBuilder reversedStr = new StringBuilder(str);
+
+            // replace the existing vowels in the new StringBuilder
+            int j = vowelsOnly.length() - 1;
+            for (int i = 0; i < str.length(); i++) {
+                if (isVowel(str.charAt(i))) {
+                    reversedStr.setCharAt(i, vowelsOnly.charAt(j));
                     j--;
                 }
             }
-            return sbl2.toString();
+            return reversedStr.toString();
         }
-
         return "";
     }
+
+    // solution 2: Reversing the vowels only, keeping consonants in place
+    // Two Pointers - O(n) Time and O(1) Space
+    public static String reverseVowelsOnly(String str) {
+        if (str.isEmpty())
+            return "";
+
+        int left = 0;
+        int right = str.length() - 1;
+        char temp;
+
+        char[] ch = str.toCharArray();
+
+        while (left < right) {
+            while (!isVowel(ch[left]) && left < right) {
+                left++;
+            }
+            while (!isVowel(ch[right]) && left < right) {
+                right--;
+            }
+            temp = ch[left];
+            ch[left] = ch[right];
+            ch[right] = temp;
+            left++;
+            right--;
+
+        }
+        return String.valueOf(ch);
+    }
+
+    // solution 2: Reversing the consonants only, keeping vowels in place
+    // Two Pointers - O(n) Time and O(1) Space
+    public static String reverseConsonantsOnly(String str) {
+        if (str.isEmpty())
+            return "";
+
+        int left = 0;
+        int right = str.length() - 1;
+        char temp;
+
+        char[] ch = str.toCharArray();
+
+        while (left < right) {
+            while (isVowel(ch[left]) && left < right) {
+                left++;
+            }
+            while (isVowel(ch[right]) && left < right) {
+                right--;
+            }
+            temp = ch[left];
+            ch[left] = ch[right];
+            ch[right] = temp;
+            left++;
+            right--;
+
+        }
+        return String.valueOf(ch);
+    }
+
+    public static boolean isVowel(char ch) {
+
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+                ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U';
+    }
+
 }

@@ -15,6 +15,13 @@ public class LongestSubStringWithoutRepeat {
     }
 
     // solution1:
+    // for each of the characters in string
+    // read from left to right, pivot left l = 0 and use slider right r = 0
+    // remove the character from a defined set if it already exists and increase left l
+    // else, add the character to a set
+    // increment r by 1 everytime
+    // check maxLength from last calculated to current
+
     public int findLongestSubstring(String str) {
 
         int maxLen = Integer.MIN_VALUE;
@@ -29,13 +36,6 @@ public class LongestSubStringWithoutRepeat {
             se.add(str.charAt(r));
             maxLen = Math.max(maxLen, (r - l + 1));
         }
-
         return maxLen;
     }
-
-    // solution2:
-    public void method2() {
-
-    }
-
 }

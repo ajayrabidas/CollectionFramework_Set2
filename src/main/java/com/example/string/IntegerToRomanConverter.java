@@ -13,8 +13,8 @@ https://leetcode.com/problems/integer-to-roman/
 Roman numerals are formed by appending the conversions of decimal place values from highest to lowest.
 Converting a decimal place value into a Roman numeral has the following rules:
 
-If the value does not start with 4 or 9, select the symbol of the maximal value that can be subtracted from the input,
-append that symbol to the result, subtract its value, and convert the remainder to a Roman numeral.
+If the value does not start with 4 or 9, select the symbol of the maximal value that can be subtracted from
+the input, append that symbol to the result, subtract its value, and convert the remainder to a Roman numeral.
 
 If the value starts with 4 or 9 use the subtractive form representing one symbol subtracted from the following symbol,
 for example, 4 is 1 (I) less than 5 (V): IV and 9 is 1 (I) less than 10 (X): IX.

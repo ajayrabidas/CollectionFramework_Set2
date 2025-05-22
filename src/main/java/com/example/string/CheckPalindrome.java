@@ -27,12 +27,15 @@ public class CheckPalindrome {
 
         int len = s.length();
         for (int i = 0; i < len; i++) {
-            if (!((int) s.charAt(i) == (int) s.charAt(len - 1 - i))) {
+            if (!(s.charAt(i) == s.charAt(len - 1 - i))) {
                 return false;
             }
         }
         return true;
     }
 
-    // solution2: starting from middle. Use two pointers
+    // solution2: starting from middle.
+    // Do using while loop as done in reverse vowels only
+    // TODO
+
 }
