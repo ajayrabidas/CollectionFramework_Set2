@@ -46,8 +46,8 @@ public class HighestAverageScore {
             }
 
             int[] currMark = stdScores.get(name);
-            currMark[0] += mark;
-            currMark[1]++; // ?
+            currMark[0] += mark; // keeps on adding new marks to index 0
+            currMark[1]++; // keeps increasing count in index 1, for every mark encountered
 
             for (Map.Entry<String, int[]> entry : stdScores.entrySet()) {
                 String student = entry.getKey();
