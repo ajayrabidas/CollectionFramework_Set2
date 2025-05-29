@@ -1,6 +1,6 @@
 package com.example.string;
 
-public class Template {
+public class ReverseInteger {
 
 // Question:
 /*
