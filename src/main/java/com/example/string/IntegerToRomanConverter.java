@@ -76,7 +76,7 @@ public class IntegerToRomanConverter {
             num = num - 1000;
         }
         while (num >= 900) {
-            sbl.append("XM");
+            sbl.append("CM");
             num = num - 900;
         }
         while (num >= 500) {

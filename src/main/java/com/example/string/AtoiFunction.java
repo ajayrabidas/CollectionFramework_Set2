@@ -43,9 +43,7 @@ Implement your custom atoi function in Java.
                 return 0;
 
             result = result * 10 + (ch - '0');
-
         }
-
         return result;
     }
 
