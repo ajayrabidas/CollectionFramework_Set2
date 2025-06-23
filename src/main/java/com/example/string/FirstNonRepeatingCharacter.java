@@ -1,5 +1,8 @@
 package com.example.string;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class FirstNonRepeatingCharacter {
 
 // Question:
@@ -15,19 +18,33 @@ Given a string,
 	//Return c
 */
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
+		System.out.println(firstNonRepeatingChar("apple"));
 
+    }
 
-	}
+    // solution1: TODO
+    public static Character firstNonRepeatingChar(String input) {
+        char[] ch = input.toCharArray();
 
-	// solution1: TODO
-	public void method1() {
+        Map<Character, Integer> me = new LinkedHashMap<>();
 
-	}
+        for (Character c : ch) {
+            me.put(c, (me.getOrDefault(c, 0)) + 1);
+        }
 
-	// solution2:
-	public void method2() {
+        for (Map.Entry<Character, Integer> m : me.entrySet()) {
+            if (m.getValue() == 1) {
+				return m.getKey();
+            }
+        }
 
-	}
+        return (0);
+    }
+
+    // solution2:
+    public void method2() {
+
+    }
 
 }
