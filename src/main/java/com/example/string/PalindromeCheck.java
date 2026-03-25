@@ -11,12 +11,15 @@ public class PalindromeCheck {
 
     }
 
-    public boolean checkPalindrome(String str) {
+    public boolean checkPalindrome(String input) {
 
-        if (str == null || str.isEmpty()) {
+        if (input == null || input.isEmpty()) {
             System.out.println("Provide a valid input");
             return false;
         }
+
+
+        String str = input.toLowerCase();
 
         int i = 0;
         int j = str.length() - 1;
