@@ -6,10 +6,10 @@ import java.util.Map;
 // Question: Q3. Count the occurrences of each Character from a given string. Retain the order of first occurrence.
 //Input: String s = "aababbccde"
 //Output: a3b3c2d1e1
-public class CharacterCountInString2 {
+public class CharCountInString2 {
 
     public static void main(String[] args) {
-        CharacterCountInString2 cc = new CharacterCountInString2();
+        CharCountInString2 cc = new CharCountInString2();
         cc.getCharCount("ababcbccc");
         cc.getCharCount("hello");
         cc.getCharCount("hello there");
