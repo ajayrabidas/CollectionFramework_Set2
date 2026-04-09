@@ -43,10 +43,9 @@ public class ClosestNumber {
             return -1;
         }
 
-//        int nearest = arr[0];
-        int nearest = Integer.MAX_VALUE;
+        int nearest = arr[0];
         for (int i = 1; i < arr.length; i++) {
-            if (Math.abs(arr[i] - target) <= Math.abs(arr[i - 1] - target)) { // '<=' makes the greater nearest number as nearest
+            if (Math.abs(arr[i] - target) <= Math.abs(nearest - target)) { // '<=' makes the greater nearest number as nearest
                 nearest = arr[i];
             }
         }
