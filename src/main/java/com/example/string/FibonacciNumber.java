@@ -27,7 +27,7 @@ public class FibonacciNumber {
             return -1;
         } else if (input == 0)
             return 0;
-        else if (input == 1)
+        else if (input == 1 || input == 2)
             return 1;
         else {
             return getFibonacci(input - 1) + getFibonacci(input - 2);
