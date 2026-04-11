@@ -15,10 +15,14 @@ public class FibonacciNumber {
 
     public static void main(String[] args) {
         FibonacciNumber fn = new FibonacciNumber();
-        System.out.println(fn.getFibonacci(9));
+
+        System.out.println(fn.getFibonacci(0));
+        System.out.println(fn.getFibonacci(1));
+        System.out.println(fn.getFibonacci(2));
         System.out.println(fn.getFibonacci(5));
         System.out.println(fn.getFibonacci(6));
         System.out.println(fn.getFibonacci(7));
+        System.out.println(fn.getFibonacci(9));
     }
 
     public int getFibonacci(int input) {
