@@ -16,6 +16,8 @@ package com.example.string;
 */
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AnagramCheck {
 
@@ -25,6 +27,12 @@ public class AnagramCheck {
         System.out.println(ac.isAnagram("allergy", "allergyy"));
         System.out.println(ac.isAnagram("listen", "lists"));
         System.out.println(ac.isAnagram("listen", "silent"));
+
+        System.out.println("Using Method 2:::::");
+        System.out.println(ac.checkAnagram("geeks", "kseeg"));
+        System.out.println(ac.checkAnagram("allergy", "allergyy"));
+        System.out.println(ac.checkAnagram("listen", "lists"));
+        System.out.println(ac.checkAnagram("listen", "silent"));
     }
 
 
@@ -41,5 +49,28 @@ public class AnagramCheck {
 
         return Arrays.equals(c1, c2);
     }
-    
+
+    public boolean checkAnagram(String s1, String s2) {
+
+        if (s1.length() != s2.length())
+            return false;
+
+        HashMap<Character, Integer> me = new HashMap<>();
+
+        for (char ch : s1.toCharArray()) {
+            me.put(ch, me.getOrDefault(ch, 0) + 1);
+        }
+
+        for (char ch : s2.toCharArray()) {
+            me.put(ch, me.getOrDefault(ch, 0) - 1);
+        }
+
+        for (Map.Entry<Character, Integer> e : me.entrySet()) {
+            if (e.getValue() != 0)
+                return false;
+        }
+
+        return true;
+    }
+
 }
