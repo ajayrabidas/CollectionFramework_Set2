@@ -41,4 +41,5 @@ public class AnagramCheck {
 
         return Arrays.equals(c1, c2);
     }
+    
 }
