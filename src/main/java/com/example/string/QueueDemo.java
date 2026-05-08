@@ -12,7 +12,8 @@ public class QueueDemo {
         queue.offer("A");
         queue.offer("B");
         queue.offer("C");
-        queue.offer("D");
+        queue.offer("D"); // offer() if fails, return false
+        queue.add("F"); // add() if fails, throws IllegalStateException
 
         System.out.println("Queue is: " + queue);
 
