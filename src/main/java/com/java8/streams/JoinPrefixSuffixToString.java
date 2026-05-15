@@ -9,7 +9,7 @@ public class JoinPrefixSuffixToString {
 
     public static void main(String[] args) {
 
-        List<String> lis = Arrays.asList("Book", "Pen", "Penciil", "Notebook", "Scissors");
+        List<String> lis = Arrays.asList("Book", "Pen", "Pencil", "Notebook", "Scissors");
         String joinedString = lis.stream().collect(Collectors.joining(", ", "[", "]"));
 
         System.out.println(joinedString);
