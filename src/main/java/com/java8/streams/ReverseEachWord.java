@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class ReverseEachWord {
 
     public static void main(String[] args) {
-        String str = "Java Concept Of The Day";
+        String str = "Hello and welcome to India";
 
         String reversed = Arrays.stream(str.split(" "))
                 .map(word -> new StringBuffer(word).reverse())
