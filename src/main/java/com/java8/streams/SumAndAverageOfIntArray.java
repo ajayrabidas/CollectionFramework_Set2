@@ -13,5 +13,6 @@ public class SumAndAverageOfIntArray {
 
         double avg = Arrays.stream(arr).average().getAsDouble();
         System.out.println("Average is: " + avg);
+
     }
 }
