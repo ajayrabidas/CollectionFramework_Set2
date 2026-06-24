@@ -1,5 +1,6 @@
 package com.java8.streams.scenario;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -26,7 +27,13 @@ public class EmployeeQueries {
                 .collect(
                         Collectors
                                 .groupingBy(Employee::getGender, Collectors.averagingInt(Employee::getAge)));
-
         System.out.println("Average ages are: " + avgAgeOfMaleAndFemale);
+
+
+        System.out.println("Get the details of highest paid employee in the organization?");
+        // Use Optional<Employee> when object can be null
+        Employee highestPaidEmployee = employeeList.stream().max(Comparator.comparingDouble(Employee::getSalary)).get();
+        System.out.println("Details of highest paid employee is: " + highestPaidEmployee);
+
     }
 }
