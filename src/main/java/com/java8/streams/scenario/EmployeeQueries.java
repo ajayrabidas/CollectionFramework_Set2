@@ -35,5 +35,14 @@ public class EmployeeQueries {
         Employee highestPaidEmployee = employeeList.stream().max(Comparator.comparingDouble(Employee::getSalary)).get();
         System.out.println("Details of highest paid employee is: " + highestPaidEmployee);
 
+
+        System.out.println("Count the number of employees in each department?");
+        Map<String, Long> countOfEmployeesEachDepartment = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
+        System.out.println("Department wise count of employees:");
+
+        for (Map.Entry<String, Long> me : countOfEmployeesEachDepartment.entrySet()) {
+            System.out.println(me.getKey() + ": " + me.getValue());
+        }
+
     }
 }
