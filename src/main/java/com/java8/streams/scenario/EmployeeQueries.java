@@ -44,5 +44,16 @@ public class EmployeeQueries {
             System.out.println(me.getKey() + ": " + me.getValue());
         }
 
+
+        System.out.println("What is the average salary of each department?");
+        Map<String, Double> avgSalaryOfEachDepartment = employeeList.stream()
+                .collect(
+                        Collectors.groupingBy(
+                                Employee::getDepartment,
+                                Collectors.averagingDouble(Employee::getSalary)));
+        for (Map.Entry<String, Double> me : avgSalaryOfEachDepartment.entrySet()) {
+            System.out.println(me.getKey() + ":\t Average Salary: " + me.getValue());
+        }
+
     }
 }
