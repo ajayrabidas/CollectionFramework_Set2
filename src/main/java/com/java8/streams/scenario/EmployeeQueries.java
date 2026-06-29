@@ -3,6 +3,7 @@ package com.java8.streams.scenario;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class EmployeeQueries {
@@ -56,9 +57,12 @@ public class EmployeeQueries {
         }
 
 
-
-
         System.out.println("Get the details of youngest male employee in the product development department?");
-
+        Optional<Employee> youngestMaleEmployeeProductDevelopmentDepartment = employeeList.stream()
+                .filter(e -> e.getGender() == "Male" && e.getDepartment() == "Product Development")
+                .min(Comparator.comparing(Employee::getAge));
+        Employee e = youngestMaleEmployeeProductDevelopmentDepartment.get();
+        System.out.println("Details of Youngest Male Employee in Product Development Department");
+        System.out.println("Employee Details: " + e.toString());
     }
 }
