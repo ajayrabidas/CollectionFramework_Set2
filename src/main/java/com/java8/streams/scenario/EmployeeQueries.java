@@ -55,5 +55,10 @@ public class EmployeeQueries {
             System.out.println(me.getKey() + ":\t Average Salary: " + me.getValue());
         }
 
+
+
+
+        System.out.println("Get the details of youngest male employee in the product development department?");
+
     }
 }
