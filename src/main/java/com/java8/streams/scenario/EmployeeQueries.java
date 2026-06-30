@@ -64,5 +64,12 @@ public class EmployeeQueries {
         Employee e = youngestMaleEmployeeProductDevelopmentDepartment.get();
         System.out.println("Details of Youngest Male Employee in Product Development Department");
         System.out.println("Employee Details: " + e.toString());
+
+
+
+        System.out.println("Who has the most working experience in the organization?");
+        Employee mostExperienced = employeeList.stream().sorted(Comparator.comparingInt(Employee::getYearOfJoining)).findFirst().get();
+        System.out.println("Most experienced employee is:\n" + mostExperienced.getName() + "\nJoined in: " + mostExperienced.getYearOfJoining());
+
     }
 }
