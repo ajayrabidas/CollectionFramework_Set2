@@ -66,10 +66,15 @@ public class EmployeeQueries {
         System.out.println("Employee Details: " + e.toString());
 
 
-
         System.out.println("Who has the most working experience in the organization?");
         Employee mostExperienced = employeeList.stream().sorted(Comparator.comparingInt(Employee::getYearOfJoining)).findFirst().get();
         System.out.println("Most experienced employee is:\n" + mostExperienced.getName() + "\nJoined in: " + mostExperienced.getYearOfJoining());
 
+
+        System.out.println("How many male and female employees are there in the sales and marketing team?");
+        Map<String, Long> countMaleFemaleInSalesMarketing = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
+        for (Map.Entry<String, Long> me : countMaleFemaleInSalesMarketing.entrySet()) {
+            System.out.println(me.getKey() + ": " + me.getValue());
+        }
     }
 }
