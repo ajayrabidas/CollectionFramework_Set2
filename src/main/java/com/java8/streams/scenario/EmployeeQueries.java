@@ -76,5 +76,17 @@ public class EmployeeQueries {
         for (Map.Entry<String, Long> me : countMaleFemaleInSalesMarketing.entrySet()) {
             System.out.println(me.getKey() + ": " + me.getValue());
         }
+
+
+
+        System.out.println("What is the average salary of male and female employees?");
+        Map<String, Double> avgSalaryMaleFemale = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingDouble(Employee::getSalary)));
+        for (Map.Entry<String, Double> me : avgSalaryMaleFemale.entrySet()) {
+            System.out.println(me.getKey() + ": " + me.getValue());
+        }
+
+
+        System.out.println("List down the names of all employees in each department?");
+
     }
 }
