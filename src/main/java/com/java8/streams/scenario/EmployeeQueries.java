@@ -1,9 +1,6 @@
 package com.java8.streams.scenario;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class EmployeeQueries {
@@ -78,7 +75,6 @@ public class EmployeeQueries {
         }
 
 
-
         System.out.println("What is the average salary of male and female employees?");
         Map<String, Double> avgSalaryMaleFemale = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingDouble(Employee::getSalary)));
         for (Map.Entry<String, Double> me : avgSalaryMaleFemale.entrySet()) {
@@ -87,6 +83,16 @@ public class EmployeeQueries {
 
 
         System.out.println("List down the names of all employees in each department?");
+        Map<String, List<Employee>> employeeAllDepartments = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+        Set<Map.Entry<String, List<Employee>>> entrySet = employeeAllDepartments.entrySet();
+        for (Map.Entry<String, List<Employee>> entry : entrySet) {
+            System.out.println("--------------------------------------");
+            System.out.println("Employees in department: " + entry.getKey());
+            for (Employee employee : entry.getValue()) {
+                System.out.println(employee.getName());
+            }
+
+        }
 
     }
 }
