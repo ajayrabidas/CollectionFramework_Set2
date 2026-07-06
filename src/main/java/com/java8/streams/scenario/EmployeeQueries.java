@@ -91,8 +91,17 @@ public class EmployeeQueries {
             for (Employee employee : entry.getValue()) {
                 System.out.println(employee.getName());
             }
-
         }
+
+
+        System.out.println("What is the average salary and total salary of the whole organization?");
+        DoubleSummaryStatistics employeeSalaryStatics = employeeList.stream().collect(Collectors.summarizingDouble(Employee::getSalary));
+        System.out.println("Employee average salary: " + employeeSalaryStatics.getAverage());
+        System.out.println("Total salary of whole organization: " + employeeSalaryStatics.getSum());
+
+
+
+
 
     }
 }
