@@ -100,7 +100,20 @@ public class EmployeeQueries {
         System.out.println("Total salary of whole organization: " + employeeSalaryStatics.getSum());
 
 
+        System.out.println("Separate the employees who are younger or equal to 25 years from those employees who are older than 25 years.");
+        Map<Boolean, List<Employee>> employeesByAge = employeeList.stream().collect(Collectors.partitioningBy(emp -> emp.getAge() > 25));
 
+        for (Map.Entry<Boolean, List<Employee>> me : employeesByAge.entrySet()) {
+            if (me.getKey()) {
+                System.out.println("Employees older than 25 are: ");
+            } else {
+                System.out.println("Employees younger than or equal to 25 are: ");
+            }
+            for (Employee employee : me.getValue()) {
+                System.out.println("Employee: " + employee.getName());
+            }
+
+        }
 
 
     }
