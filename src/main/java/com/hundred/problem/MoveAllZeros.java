@@ -1,6 +1,5 @@
 package com.hundred.problem;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 // Move all zeros to the end of an array
